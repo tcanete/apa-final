@@ -25,8 +25,14 @@ namespace EnrollmentSystem.Controllers
             _logger = logger;
         }
 
+        [HttpPost]
+        public IEnumerable<string> Post()
+        {
+            return Summaries;
+        }
+
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get(MatriculaRequestDTO matriculaRequestDTO)
+        public IEnumerable<WeatherForecast> Get(MatricularRequestDTO matriculaRequestDTO)
         {
 
             var interactor = new MatricularInteractor();

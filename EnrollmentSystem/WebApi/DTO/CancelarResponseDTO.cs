@@ -1,6 +1,6 @@
 namespace EnrollmentSystem.WebApi.DTO
 {
-    public class MatriculaRequestDTO
+    public class CancelarResponseDTO
     {
         
     }
