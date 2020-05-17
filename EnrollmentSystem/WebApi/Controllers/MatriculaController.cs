@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EnrollmentSystem.UseCases.Matricular;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -26,6 +27,8 @@ namespace EnrollmentSystem.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+
+            var interactor = new MatricularInteractor();
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
