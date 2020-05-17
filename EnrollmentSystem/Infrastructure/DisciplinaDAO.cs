@@ -14,5 +14,10 @@ namespace EnrollmentSystem.Infrastructure.Disciplina
         public IList<DisciplinaCobolDTO> Listar() {
             return _sistemaCobol.ListarDisciplinas();
         }
+
+        public bool Add(DisciplinaCobolDTO disciplina)
+        {
+            return this._sistemaCobol.AddDisciplina(disciplina);
+        }
     }
 }

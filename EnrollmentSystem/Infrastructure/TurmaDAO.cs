@@ -11,8 +11,14 @@ namespace EnrollmentSystem.Infrastructure
             this._sistemaCobol = sistemaCobol;
         }
 
-        public IList<TurmaCobolDTO> Listar() {
+        public IList<TurmaCobolDTO> Listar()
+        {
             return _sistemaCobol.ListarTurmas();
+        }
+
+        public bool Add(TurmaCobolDTO turma)
+        {
+            return this._sistemaCobol.AddTurma(turma);
         }
     }
 }

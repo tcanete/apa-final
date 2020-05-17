@@ -13,7 +13,12 @@ namespace EnrollmentSystem.Infrastructure.Aluno
 
         public IList<AlunoCobolDTO> Listar()
         {
-            return _sistemaCobol.ListarAlunos()
+            return _sistemaCobol.ListarAlunos();
+        }
+
+        public bool Add(AlunoCobolDTO aluno)
+        {
+            return this._sistemaCobol.AddAluno(aluno);
         }
     }
 }

@@ -8,7 +8,6 @@ namespace EnrollmentSystem.Infrastructure
         private IList<TurmaCobolDTO> _Turmas;
         private IList<DisciplinaCobolDTO> _Disciplinas;
 
-
         public SistemaCobol()
         {
             this._Alunos = new List<AlunoCobolDTO>();
@@ -16,17 +15,37 @@ namespace EnrollmentSystem.Infrastructure
             this._Disciplinas = new List<DisciplinaCobolDTO>();
         }
 
-
-        public IList<AlunoCobolDTO> ListarAlunos() {
+        public IList<AlunoCobolDTO> ListarAlunos()
+        {
             return this._Alunos;
         }
 
-        public IList<TurmaCobolDTO> ListarTurmas() {
+        public bool AddAluno(AlunoCobolDTO aluno)
+        {
+            this._Alunos.Add(aluno);
+            return true;
+        }
+
+        public IList<TurmaCobolDTO> ListarTurmas()
+        {
             return this._Turmas;
         }
 
-        public IList<DisciplinaCobolDTO> ListarDisciplinas() {
+        public bool AddTurma(TurmaCobolDTO turma)
+        {
+            this._Turmas.Add(turma);
+            return true;
+        }
+
+        public IList<DisciplinaCobolDTO> ListarDisciplinas()
+        {
             return this._Disciplinas;
+        }
+
+        public bool AddDisciplina(DisciplinaCobolDTO disciplina)
+        {
+            this._Disciplinas.Add(disciplina);
+            return true;
         }
     }
 }
