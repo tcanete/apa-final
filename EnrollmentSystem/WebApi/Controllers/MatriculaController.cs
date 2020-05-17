@@ -10,14 +10,9 @@ using Microsoft.Extensions.Logging;
 namespace EnrollmentSystem.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("v1/[controller]")]
     public class MatriculaController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<MatriculaController> _logger;
 
         public MatriculaController(ILogger<MatriculaController> logger)
