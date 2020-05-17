@@ -6,5 +6,10 @@ namespace EnrollmentSystem.Infrastructure.Matricula
         {
 
         }
+
+        public void Cancelar()
+        {
+
+        }
     }
 }
