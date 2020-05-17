@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EnrollmentSystem.Domain.Disciplinas;
 using EnrollmentSystem.Domain.Turmas;
 
@@ -13,5 +14,11 @@ namespace EnrollmentSystem.Domain.Alunos
         public int Idade { get; set; }
         public Turma Turma { get; set; }
         public IList<Disciplina> Disciplinas { get; set; }
+
+
+        public bool VerificarDisciplinaJaMatriculada(Disciplina disciplina)
+        {
+            return this.Disciplinas.Any(d => d.Id == disciplina.Id);
+        }
     }
 }
