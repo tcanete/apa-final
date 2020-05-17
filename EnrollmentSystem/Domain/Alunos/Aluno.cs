@@ -20,5 +20,9 @@ namespace EnrollmentSystem.Domain.Alunos
         {
             return this.Disciplinas.Any(d => d.Id == disciplina.Id);
         }
+
+        public IList<Disciplina> ListarDisciplinasMatriculadas() {
+            return this.Disciplinas;
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace EnrollmentSystem.Domain.Turmas
         public Guid Id { get; set; }
         public string Nome { get; set; }        
         public IList<Aluno> Alunos { get; set; }
-
+        public DateTime Inicio { get; set; }
 
         public IList<string> ListarNomesAlunos() {
             return this.Alunos.Select(a => a.Nome).ToList();
