@@ -1,34 +1,31 @@
 using System.Collections.Generic;
-using EnrollmentSystem.Domain.Alunos;
-using EnrollmentSystem.Domain.Disciplinas;
-using EnrollmentSystem.Domain.Turmas;
 
 namespace EnrollmentSystem.Infrastructure
 {
     public class SistemaCobol
     {
-        private IList<Aluno> _Alunos;
-        private IList<Turma> _Turmas;
-        private IList<Disciplina> _Disciplinas;
+        private IList<AlunoCobolDTO> _Alunos;
+        private IList<TurmaCobolDTO> _Turmas;
+        private IList<DisciplinaCobolDTO> _Disciplinas;
 
 
         public SistemaCobol()
         {
-            this._Alunos = new List<Aluno>();
-            this._Turmas = new List<Turma>();
-            this._Disciplinas = new List<Disciplina>();
+            this._Alunos = new List<AlunoCobolDTO>();
+            this._Turmas = new List<TurmaCobolDTO>();
+            this._Disciplinas = new List<DisciplinaCobolDTO>();
         }
 
 
-        public IList<Aluno> ListarAlunos() {
+        public IList<AlunoCobolDTO> ListarAlunos() {
             return this._Alunos;
         }
 
-        public IList<Turma> ListarTurmas() {
+        public IList<TurmaCobolDTO> ListarTurmas() {
             return this._Turmas;
         }
 
-        public IList<Disciplina> ListarDisciplinas() {
+        public IList<DisciplinaCobolDTO> ListarDisciplinas() {
             return this._Disciplinas;
         }
     }
