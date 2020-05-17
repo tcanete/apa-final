@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using EnrollmentSystem.Domain.Alunos;
+using EnrollmentSystem.Domain.Disciplinas;
+using EnrollmentSystem.Domain.Turmas;
 
 namespace EnrollmentSystem.Domain.Alunos
 {

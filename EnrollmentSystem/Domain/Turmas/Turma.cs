@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using EnrollmentSystem.Domain.Alunos;
 
 namespace EnrollmentSystem.Domain.Turmas
 {
