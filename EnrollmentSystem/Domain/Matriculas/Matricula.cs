@@ -7,5 +7,9 @@ namespace EnrollmentSystem.Domain.Matriculas
     {
         public Aluno Aluno { get; set; }
         public Disciplina Disciplina { get; set; }
+
+        public bool VerificarAlunoMatriculadoDisciplina() {
+            return true;
+        }
     }
 }
