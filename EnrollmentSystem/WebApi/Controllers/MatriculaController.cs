@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EnrollmentSystem.UseCases.Matricular;
+using EnrollmentSystem.WebApi.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -25,7 +26,7 @@ namespace EnrollmentSystem.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<WeatherForecast> Get(MatriculaRequestDTO matriculaRequestDTO)
         {
 
             var interactor = new MatricularInteractor();
