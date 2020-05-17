@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ namespace EnrollmentSystem.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MatriculaController : ControllerBase
+    public class DisciplinaController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
@@ -20,25 +20,13 @@ namespace EnrollmentSystem.Controllers
 
         private readonly ILogger<MatriculaController> _logger;
 
-        public MatriculaController(ILogger<MatriculaController> logger)
+        public DisciplinaController(ILogger<MatriculaController> logger)
         {
             _logger = logger;
         }
 
-        [HttpPost]
-        public IEnumerable<string> Matricular()
-        {
-            return Summaries;
-        }
-
-        [HttpPost]
-        public IEnumerable<string> Cancelar()
-        {
-            return Summaries;
-        }
-
         [HttpGet]
-        public IEnumerable<WeatherForecast> Listar(ListarRequestDTO matriculaRequestDTO)
+        public IEnumerable<WeatherForecast> Listar()
         {
 
             var interactor = new MatricularInteractor();
