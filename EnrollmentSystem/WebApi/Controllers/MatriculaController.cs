@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EnrollmentSystem.Application.UseCases.Listar;
 using EnrollmentSystem.UseCases.Matricular;
 using EnrollmentSystem.WebApi.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -32,19 +33,14 @@ namespace EnrollmentSystem.Controllers
             return Summaries;
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Listar(ListarRequestDTO matriculaRequestDTO)
+        [HttpGet("/{id}")]
+        public ListarResponseDTO Listar(Guid id)
         {
+            var interactor = new ListarInteractor();
 
-            var interactor = new MatricularInteractor();
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var result = interactor.Processar(id);
+
+            return new ListarResponseDTO();
         }
     }
 }
