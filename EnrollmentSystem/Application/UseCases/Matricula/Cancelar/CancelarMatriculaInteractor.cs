@@ -16,11 +16,23 @@ namespace EnrollmentSystem.UseCases.Matricula.Cancelar
 
         public CancelarMatriculaOutput Processar(CancelarMatriculaInput input)
         {
-            var aluno = _alunoDAO.GetAluno(input.AlunoId);
-            var disciplinaDAO = _disciplinaDAO.GetDisciplina(input.DisciplinaId);
-
-
             var retorno = new CancelarMatriculaOutput();
+            var aluno = _alunoDAO.GetAluno(input.AlunoId);
+            var disciplina = _disciplinaDAO.GetDisciplina(input.DisciplinaId);
+
+            if (aluno.PossuiDisciplina(disciplina) && disciplina.PodeSerCancelada())
+            {
+                aluno.RemoverDisciplina(disciplina);
+                _alunoDAO.Update(aluno);
+                retorno.Sucesso = true;
+            }
+            else
+            {
+                retorno.Sucesso = false;
+                retorno.CodigoErro = "ABC123";
+                retorno.MensagemErro = "Matrícula não pode ser cancelada após início";
+            }
+
             return retorno;
         }
     }

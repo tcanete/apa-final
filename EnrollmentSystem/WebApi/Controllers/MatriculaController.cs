@@ -25,7 +25,7 @@ namespace EnrollmentSystem.Controllers
         [HttpPost]
         public IEnumerable<string> Matricular()
         {
-            return Summaries;
+            return new string[] {"1", "2"};
         }
 
         [HttpDelete]

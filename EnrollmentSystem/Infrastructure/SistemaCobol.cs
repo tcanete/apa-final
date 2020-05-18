@@ -33,6 +33,14 @@ namespace EnrollmentSystem.Infrastructure
             return true;
         }
 
+        public bool UpdateAluno(AlunoCobolDTO aluno)
+        {
+            var alunoCobol= this._Alunos.Where(a => a.Id == aluno.Id).First();
+            alunoCobol = aluno;
+            //persist
+            return true;
+        }
+
         public IList<TurmaCobolDTO> ListarTurmas()
         {
             return this._Turmas;

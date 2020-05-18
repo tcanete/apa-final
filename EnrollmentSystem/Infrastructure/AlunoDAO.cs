@@ -32,9 +32,22 @@ namespace EnrollmentSystem.Infrastructure.Aluno
             };
         }
 
+        public bool Update(AlunoDomain.Aluno aluno)
+        {
+            var alunoCobol = new AlunoCobolDTO
+            {
+                //mapping aluno
+            };
+
+            return this._sistemaCobol.UpdateAluno(alunoCobol);
+        }
+
         public bool Add(AlunoDomain.Aluno aluno)
         {
-            var alunoCobol = aluno; //mapping
+            var alunoCobol = new AlunoCobolDTO
+            {
+                //mapping aluno
+            };
 
             return this._sistemaCobol.AddAluno(alunoCobol);
         }

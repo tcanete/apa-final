@@ -12,10 +12,16 @@ namespace EnrollmentSystem.Domain.Disciplinas
         public int MaximoAlunos { get; set; }
         public IList<Turma> Turmas { get; set; }
         public DateTime SemestreOferta { get; set; }
+        public DateTime DataInicio { get; set; }
 
         public IList<string> ListarNomeTurmas()
         {
             return this.Turmas.Select(t => t.Nome).ToList();
+        }
+
+        public bool PodeSerCancelada()
+        {
+            return DateTime.Now < this.DataInicio;
         }
     }
 }
