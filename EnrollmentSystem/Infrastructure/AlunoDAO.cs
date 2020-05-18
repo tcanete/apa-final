@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using AlunoDomain = EnrollmentSystem.Domain.Alunos;
 
 namespace EnrollmentSystem.Infrastructure.Aluno
 {
@@ -12,18 +14,29 @@ namespace EnrollmentSystem.Infrastructure.Aluno
             _sistemaCobol = sistemaCobol;
         }
 
-        public IList<AlunoCobolDTO> Listar()
+        public IList<AlunoDomain.Aluno> Listar()
         {
-            return _sistemaCobol.ListarAlunos();
+            return _sistemaCobol.ListarAlunos().Select(a => new AlunoDomain.Aluno
+            {
+                //mapping
+            }).ToList();
         }
 
-        public AlunoCobolDTO GetAluno(Guid id){
-            return _sistemaCobol.GetAluno(id);
+        public AlunoDomain.Aluno GetAluno(Guid id)
+        {
+            var aluno = _sistemaCobol.GetAluno(id);
+
+            return new AlunoDomain.Aluno
+            {
+                //mapping
+            };
         }
 
-        public bool Add(AlunoCobolDTO aluno)
+        public bool Add(AlunoDomain.Aluno aluno)
         {
-            return this._sistemaCobol.AddAluno(aluno);
+            var alunoCobol = aluno; //mapping
+
+            return this._sistemaCobol.AddAluno(alunoCobol);
         }
     }
 }

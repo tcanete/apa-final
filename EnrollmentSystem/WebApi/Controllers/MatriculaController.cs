@@ -36,7 +36,7 @@ namespace EnrollmentSystem.Controllers
         [HttpGet("/{id}")]
         public ListarResponseDTO Listar(Guid id)
         {
-            var interactor = new ListarInteractor();
+            var interactor = new ListarInteractor(); //DI
             var result = interactor.Processar(id);
             return new ListarResponseDTO(result);
         }
