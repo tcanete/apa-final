@@ -49,6 +49,11 @@ namespace EnrollmentSystem.Infrastructure
             return this._Disciplinas;
         }
 
+        public DisciplinaCobolDTO GetDisciplina(Guid id)
+        {
+            return this._Disciplinas.Where(d => d.Id == id).FirstOrDefault();
+        }
+
         public bool AddDisciplina(DisciplinaCobolDTO disciplina)
         {
             this._Disciplinas.Add(disciplina);

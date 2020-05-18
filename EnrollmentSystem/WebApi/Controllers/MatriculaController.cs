@@ -28,7 +28,7 @@ namespace EnrollmentSystem.Controllers
             return Summaries;
         }
 
-        [HttpPost]
+        [HttpDelete]
         public CancelarResponseDTO Cancelar(CancelarRequestDTO request)
         {
             var interactor = new CancelarMatriculaInteractor(); //DI
