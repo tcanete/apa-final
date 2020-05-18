@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EnrollmentSystem.Application.UseCases.Matricula.Listar;
+using EnrollmentSystem.UseCases.Matricula.Cancelar;
 using EnrollmentSystem.UseCases.Matricular;
 using EnrollmentSystem.WebApi.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -28,9 +29,18 @@ namespace EnrollmentSystem.Controllers
         }
 
         [HttpPost]
-        public IEnumerable<string> Cancelar()
+        public CancelarResponseDTO Cancelar(CancelarRequestDTO request)
         {
-            return Summaries;
+            var interactor = new CancelarMatriculaInteractor(); //DI
+
+            var input = new CancelarMatriculaInput
+            {
+                //mapping
+            };
+
+            var result = interactor.Processar(input);
+
+            return new CancelarResponseDTO(result);
         }
 
         [HttpGet("/{id}")]

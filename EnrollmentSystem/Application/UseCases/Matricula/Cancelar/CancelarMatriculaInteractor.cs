@@ -4,7 +4,8 @@ namespace EnrollmentSystem.UseCases.Matricula.Cancelar
     {
         public CancelarMatriculaOutput Processar(CancelarMatriculaInput input)
         {
-            throw new System.NotImplementedException();
+            
+            
         }
     }
 }
