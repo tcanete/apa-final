@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EnrollmentSystem.Application.UseCases.Listar;
+using EnrollmentSystem.Application.UseCases.Matricula.Listar;
 using EnrollmentSystem.UseCases.Matricular;
 using EnrollmentSystem.WebApi.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -37,10 +37,8 @@ namespace EnrollmentSystem.Controllers
         public ListarResponseDTO Listar(Guid id)
         {
             var interactor = new ListarInteractor();
-
             var result = interactor.Processar(id);
-
-            return new ListarResponseDTO();
+            return new ListarResponseDTO(result);
         }
     }
 }

@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EnrollmentSystem.Infrastructure
 {
@@ -18,6 +20,11 @@ namespace EnrollmentSystem.Infrastructure
         public IList<AlunoCobolDTO> ListarAlunos()
         {
             return this._Alunos;
+        }
+
+        public AlunoCobolDTO GetAluno(Guid id)
+        {
+            return this._Alunos.Where(a => a.Id == id).FirstOrDefault();
         }
 
         public bool AddAluno(AlunoCobolDTO aluno)

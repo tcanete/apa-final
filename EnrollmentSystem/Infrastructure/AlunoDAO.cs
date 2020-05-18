@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace EnrollmentSystem.Infrastructure.Aluno
@@ -14,6 +15,10 @@ namespace EnrollmentSystem.Infrastructure.Aluno
         public IList<AlunoCobolDTO> Listar()
         {
             return _sistemaCobol.ListarAlunos();
+        }
+
+        public AlunoCobolDTO GetAluno(Guid id){
+            return _sistemaCobol.GetAluno(id);
         }
 
         public bool Add(AlunoCobolDTO aluno)

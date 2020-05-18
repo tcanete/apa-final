@@ -7,6 +7,7 @@ namespace EnrollmentSystem.Infrastructure
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
+        public int MaximoAlunos { get; set; }
         public IList<TurmaCobolDTO> Turmas { get; set; }
         public DateTime SemestreOferta { get; set; }
     }
