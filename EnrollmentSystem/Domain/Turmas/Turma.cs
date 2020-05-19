@@ -16,5 +16,19 @@ namespace EnrollmentSystem.Domain.Turmas
         public IList<string> ListarNomesAlunos() {
             return this.Alunos.Select(a => a.Nome).ToList();
         }
+
+        public bool PodeMatricular() {
+            var ListaAlunos = new IList<string> this.ListarNomesAlunos;
+            int AlunosMatriculados = sizeof(ListaAlunos);
+
+            return (DateTime.Now < this.DataInicio) && (AlunosMatriculados < this.MaximoAlunos);
+        }
+
+        public bool MatricularDisciplina(Disciplina disciplina)
+        {
+            this.Disciplinas.Remove(disciplina);
+
+            return true;
+        }
     }
 }

@@ -20,5 +20,25 @@ namespace EnrollmentSystem.Infrastructure
         {
             return this._sistemaCobol.AddTurma(turma);
         }
+
+        public bool Update(TurmaDomain.Turma turma)
+        {
+            var turmaCobol = new TurmaCobolDTO
+            {
+                //mapping aluno
+            };
+
+            return this._sistemaCobol.UpdateTurma(turmaCobol);
+        }
+
+        public TurmaDomain.Turma GetTurma(Guid id)
+        {
+            var turma = _sistemaCobol.GetTurma(id);
+
+            return new AlunoDomain.Turma
+            {
+                //mapping
+            };
+        }
     }
 }
